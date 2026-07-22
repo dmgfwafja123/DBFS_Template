@@ -1,0 +1,19 @@
+// routes/metalsRoutes.js
+const express = require("express");
+const metalsService = require("../services/metalsService");
+
+const router = express.Router();
+
+// GET /api/metals/prices
+// Returns live (or mocked) Gold/Silver/Platinum prices per troy ounce in USD and SGD.
+router.get("/prices", async (req, res) => {
+  try {
+    const data = await metalsService.getLatestPricesSgd();
+    res.json(data);
+  } catch (err) {
+    console.error("Failed to fetch metal prices:", err.message);
+    res.status(502).json({ error: "Could not fetch precious metal prices right now." });
+  }
+});
+
+module.exports = router;
