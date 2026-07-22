@@ -290,3 +290,87 @@ select.input {
     flex-direction: column;
   }
 }
+
+/* Precious Metals */
+
+.metal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.metal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.metal-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.metal-card-header h3 {
+  font-family: var(--font-display);
+}
+
+.metal-icon {
+  font-size: 1.4rem;
+}
+
+.metal-price {
+  font-family: var(--font-figure);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.metal-price-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.metal-price-sub {
+  font-family: var(--font-figure);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+}
+
+.metal-total {
+  font-family: var(--font-figure);
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Buy modal */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: oklch(0.15 0.01 250 / 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  z-index: 50;
+}
+
+.modal {
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-panel);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--brand-wash);
+  color: var(--brand);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
